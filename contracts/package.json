@@ -1,0 +1,13 @@
+{
+  "name": "hardhat-javascript-starter",
+  "scripts": {
+    "build": "npx thirdweb@latest detect",
+    "deploy": "npx thirdweb@latest deploy",
+    "release": "npx thirdweb@latest release"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.8.2",
+    "@thirdweb-dev/contracts": "^3.4.4",
+    "hardhat": "^2.10.1"
+  }
+}
