@@ -74,7 +74,8 @@ const Home: NextPage = () => {
 
     try {
       const image = await ImageService.generate(prompt)
-      image && setImage(image)
+      const imageSrc = ` data:image/jpeg;charset=utf-8;base64,${image}`
+      image && setImage(imageSrc)
     } catch (error) {
       console.log(error)
     }
