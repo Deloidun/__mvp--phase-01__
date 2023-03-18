@@ -77,7 +77,7 @@ const Home: NextPage = () => {
       const imageSrc = ` data:image/jpeg;charset=utf-8;base64,${image}`
       image && setImage(imageSrc)
     } catch (error) {
-      console.log(error)
+      console.log(error)  
     }
   }
 
@@ -86,27 +86,33 @@ const Home: NextPage = () => {
       <Head>
         <title>BlockGen AI</title>
       </Head>
+      <div className="bg-black">
+      <nav className=" flex items-center px-8 py-8 h-20 bg-none">
+          <img src="./pages/LOGO-pricpale.png" className="mr-6 " />
+          <h3 className="font-['Inter'] font-bold text-xl leading-6 tracking-[.5em] mr-auto text-[#FFFFFF]" >
+            BLOCKGEN
+          </h3>
+            
+          {address ? (
+            <>
+              <p className="text-slate-400">Your address: {address}</p>
 
-      <main className="flex flex-col items-center">
-        <div className="mb-4" />
+              <div className="mb-4" />
 
-        {address ? (
-          <>
-            <p className="text-slate-400">Your address: {address}</p>
-
-            <div className="mb-4" />
-
-            <button onClick={disconnectWallet} className="inline-flex items-center rounded-md bg-gray-200 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300">
-              Disconnect Wallet
+              <button onClick={disconnectWallet} className="inline-flex  rounded-md bg-[#4745D0] px-3 py-2 text-sm font-semibold text-[#FFFFFF] shadow-sm ring-1 ring-inset bg-[#4745D0] ">
+                Disconnect Wallet
+              </button>
+            </>
+          ) : (
+            <button onClick={connectWithMetamask} className="inline-flex rounded-md bg-[#4745D0] px-3 py-2 text-sm font-semibold text-[#FFFFFF] shadow-sm ring-1 ring-inset bg-[#4745D0] ">
+              Connect Wallet
             </button>
-          </>
-        ) : (
-          <button onClick={connectWithMetamask} className="inline-flex items-center rounded-md bg-gray-200 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300">
-            Connect Wallet
-          </button>
-        )}
+          )}
+      </nav>
+      <main className="flex flex-col items-center">
+        
 
-        {!loading ? (
+        {/* {!loading ? (
           <div className="flex gap-4">
             {nfts?.map((nft) => (
               <div className="my-6 flex flex-col items-center" key={nft.metadata.id.toString()}>
@@ -132,16 +138,23 @@ const Home: NextPage = () => {
           <h3 className="mt-4">Name</h3>
         </div>
 
-        <div className="mb-4" />
-
+        <div className="mb-4" /> */}
+        <div className="items-center align-middle font-bold tracking-[.2px font-[sora] text-[64px] mt-[253px] text-[#FFFFFF]">
+          <h3 >
+            AI-powered platform
+          </h3>
+          <h3>
+            for NFTs
+          </h3>
+        </div>
         <textarea
-          className="w-1/2 p-3 rounded-lg border border-slate-300 outline-none focus-visible:border focus-visible:border-slate-400"
-          placeholder="Type here."
+          className="w-1/2 p-3 rounded-lg border border-solid border-[#262840] outline-none focus-visible:border focus-visible:border-slate-400 bg-[#060714] opacity-70 text-[#FFFFFF]"
+          placeholder="Start generating your AI NFT here..."
           autoFocus
           onChange={(event) => setPrompt(event.currentTarget.value)}
         />
 
-        <div className="mb-4" />
+        {/* <div className="mb-4" />
 
         <button
           className="inline-flex items-center rounded-md bg-blue-900 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300"
@@ -157,8 +170,15 @@ const Home: NextPage = () => {
           onClick={mint}
         >
           Mint NFT
-        </button>
+        </button> */}
+        <p className='mt-[150px] font-[Inter] text-[#FFFFFF]'>
+          BRINGING <span className="font-[Inter] text-[#6C4DD7]">AI TO WEB 3.0</span> THROUGH NFTS
+          <p className= "px-[60px] font-[Inter] text-[#FFFFFF]">
+            MVP BLOCKGEN ©2023
+          </p>
+        </p>
       </main>
+      </div>
     </>
   )
 };
